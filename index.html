@@ -5,7 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>    WEB DESIGN MARK LIST</title>
-   
+   <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+           /* background-color: rgb(168, 245, 248);*/
+           background-image: url('https://images.unsplash.com/photo-1602601022543-c7c30e0b68e5?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+           background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+
+              }
+
+      
+
+        #content {
+            position: relative; /* Essential for z-index to work */
+            z-index: 1; /* Above the video */
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 5em;
+            height: 100vh; /* Full viewport height */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for content */
+            padding: 20px; /* Add some padding */
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #006400;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1; /* Ensure nav is above video */
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 70px; /* Consistent size */
+            height: 70px;
+            border-radius: 50%;
+            margin-right: 3px;
+        }
+
+        .logo  {
+            font-size: 22px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.25s ease;
+        }
+
+        nav ul li a:hover {
+            color: #05000069;
+            border: solid 1px #2aa8bc69;
+            border-radius: solid 5px #5c04ff69;
+            background-color: #c00e0e;
+        }
+
+        /* Basic Gallery Styling 
+        .gallery-section {
+            padding: 50px 20px;
+            text-align: center;
+        }*/
+
+        a{
+            text-decoration: none;
+            color: white;
+            background-color: #2889ba;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+   </style>
 </head>
 <body>
 
