@@ -14,7 +14,7 @@
 
         #content {
             position: relative; /* Essential for z-index to work */
-            z-index: 1; /* Above the video */
+           /* z-index: 1; /* Above the video */
             color: white;
             text-align: center;
             display: flex;
@@ -22,9 +22,9 @@
             justify-content: center;
             align-items: center;
             
-            height: 100vh; /* Full viewport height */
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for content */
-            padding: 20px; /* Add some padding */
+         /*   height: 100vh; /* Full viewport height */
+          /*  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for content */
+          /*  padding: 20px; /* Add some padding */*/
         }
 
         nav {
@@ -35,7 +35,7 @@
             padding: 15px 20px;
             position: sticky;
             top: 0;
-            z-index: 1; /* Ensure nav is above video */
+           /* z-index: 1; /* Ensure nav is above video */
         }
 
         .logo {
