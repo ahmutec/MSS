@@ -32,6 +32,8 @@
             z-index: 1; /* Ensure nav is above video */
         }
 h1{
+padding:10px;
+marigin:5px;
 font-size:5em;
         .logo {
             display: flex;
