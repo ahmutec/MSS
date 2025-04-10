@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-    <title>    WEB DESIGN MARK LIST</title>
-   <style>
+    <title>WEB DESIGN MARK LIST</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            overflow: hidden;
-           /* background-color: rgb(168, 245, 248);*/
-           background-image: url('https://images.unsplash.com/photo-1602601022543-c7c30e0b68e5?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-           background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-
-              }
-
-      
+            overflow-x: hidden;
+            background-image: url('https://images.unsplash.com/photo-1602601022543-c7c30e0b68e5?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
 
         #content {
-            position: relative; /* Essential for z-index to work */
-            z-index: 1; /* Above the video */
+            position: relative;
+            /*z-index: 1;*/
             color: white;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-size: 2em;
-            height: 100vh; /* Full viewport height */
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for content */
-            padding: 20px; /* Add some padding */
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2vw;
         }
 
         nav {
@@ -40,102 +41,126 @@
             align-items: center;
             justify-content: space-between;
             background-color: #006400;
-            padding: 15px 20px;
+            padding: 1rem 2vw;
             position: sticky;
             top: 0;
-            z-index: 1; /* Ensure nav is above video */
+            z-index: 1;
+            flex-wrap: wrap;
         }
 
         .logo {
             display: flex;
             align-items: center;
+            gap: 1rem;
         }
 
         .logo img {
-            width: 70px; /* Consistent size */
-            height: 70px;
+            width: clamp(40px, 10vw, 70px);
+            height: clamp(40px, 10vw, 70px);
             border-radius: 50%;
-            margin-right: 3px;
         }
 
-        .logo  {
-            font-size: 22px;
+        .logo h1 {
+            font-size: clamp(1.2rem, 5vw, 1.8rem);
             color: #fff;
             font-weight: bold;
         }
 
         nav ul {
             list-style: none;
-            margin: 0;
-            padding: 0;
             display: flex;
-            gap: 30px;
+            gap: clamp(1rem, 3vw, 2rem);
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #fff;
-            font-size: 16px;
-            transition: color 0.25s ease;
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            transition: all 0.25s ease;
+            padding: 0.5rem 1rem;
         }
 
         nav ul li a:hover {
-            color: #05000069;
-            border: solid 1px #2aa8bc69;
-            border-radius: solid 5px #5c04ff69;
+            color: #fff;
             background-color: #c00e0e;
+            border-radius: 5px;
         }
 
-        /* Basic Gallery Styling 
-        .gallery-section {
-            padding: 50px 20px;
-            text-align: center;
-        }*/
-
-        a{
+        a {
             text-decoration: none;
             color: white;
             background-color: #2889ba;
-            padding: 10px 20px;
+            padding: clamp(0.5rem, 2vw, 0.8rem) clamp(1rem, 3vw, 1.5rem);
             border-radius: 5px;
-            font-size: 18px;
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
             transition: background-color 0.3s ease;
+            display: inline-block;
         }
-   </style>
+
+        a:hover {
+            background-color: #1f6d91;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            margin-bottom: 1rem;  
+       font-family: ui-monospace;
+        }
+
+        h2 {
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            margin-bottom: 1rem;
+
+        }
+
+        /* Media Queries for additional responsiveness */
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            #content {
+                padding: 4vw;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            nav ul li a {
+                padding: 0.5rem;
+            }
+}
+    </style>
 </head>
 <body>
-
-<nav>
-    <div class="logo">
-        <img src="https://th.bing.com/th/id/OIP.d0Zp5QpiGIX2cBjfe1maygAAAA?pid=ImgDet&w=178&h=133&c=7&dpr=1.5" alt=" Logo">
-        <h1>MSS</h1>
-    </div>
- <div>
     <nav>
-    <ul>
-        <li><a href="https://script.google.com/macros/s/AKfycbwgR-15hF9IMkxWFxRP9sKXqYLvkUBhT73yt0Eb10HaKx8parmJoBJgaI2iteCnnhENRw/exec">ATTENDANCE</a></li>
-        <li><a href="https://script.google.com/macros/s/AKfycbx760sHRWSpP0MgSa2fTvJDiuCxonUm_Fon7FjJd5uUEHkG_29pjlzRF2-57qdO-i0/exec">MARKLIST</a></li>
-    <!--        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li> -->
-    </ul>
-</nav>
-   
- </div>
-</nav>
+        <div class="logo">
+            <img src="https://th.bing.com/th/id/OIP.d0Zp5QpiGIX2cBjfe1maygAAAA?pid=ImgDet&w=178&h=133&c=7&dpr=1.5" alt="Logo">
+            <h1>MSS</h1>
+        </div>
+        <ul>
+            <li><a href="https://script.google.com/macros/s/AKfycbwgR-15hF9IMkxWFxRP9sKXqYLvkUBhT73yt0Eb10HaKx8parmJoBJgaI2iteCnnhENRw/exec">ATTENDANCE</a></li>
+            <li><a href="https://script.google.com/macros/s/AKfycbx760sHRWSpP0MgSa2fTvJDiuCxonUm_Fon7FjJd5uUEHkG_29pjlzRF2-57qdO-i0/exec">MARKLIST</a></li>
+        </ul>
+    </nav>
 
+    <main>
+        <div id="content">
+            <h1>WELCOME TO MILLENNIUM SECONDARY SCHOOL <br>WEB DESIGN STUDENT ONLINE PORTAL</h1>
+        </div>
+    </main>
 
-
-<main>
-    <div id="content">
-        <h1>WELCOME TO MILLENNIUM SECONADRY SCHOOLL <br>WEB DESIGN STUDENT ONLINE PORT</h1>
-      <!----  <a href="grade.html">Start</a> -->
-    </div>
-</main>
-<footer>
-    <div class="gallery-section">
-        <h2>Gallery</h2>
-        <a href="gallery.html">View Gallery</a>
-    </div>
-    </footer>
 </body>
 </html>
