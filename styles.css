@@ -10,18 +10,18 @@ body {
   text-align: center;
   background-image: url('https://storage.prompt-hunt.workers.dev/632b7202-1aea-4a3d-8933-7940d887196b');
   background-color: lightgreen;
-  background-size: cover; /* Scales background properly */
-  background-position: center; /* Centers background */
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
-  min-height: 100vh; /* Full viewport height */
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Footer sticks to bottom */
+  flex-direction: column;
 }
 
 p {
   border: 0;
   border-radius: 5px;
-  text-wrap: balance; /* Modern text wrapping */
+  text-wrap: balance;
   font-weight: bold;
   color: rgb(242, 241, 241);
 }
@@ -30,56 +30,35 @@ p {
 header {
   background: #333;
   color: white;
-  padding: clamp(0.5rem, 2vw, 1rem); /* Responsive padding */
+  padding: clamp(0.25rem, 1vw, 0.5rem); /* Reduced padding for shorter height */
   position: sticky;
   top: 0;
-  z-index: 1000; /* Above most content */
+  z-index: 1000;
   width: 100%;
 }
 
 /* Container */
 .container {
-  max-width: min(90%, 1200px); /* Caps width for large screens */
+  max-width: min(90%, 1200px);
   margin: auto;
-  padding: clamp(0.5rem, 2vw, 1rem); /* Responsive padding */
+  padding: clamp(0.5rem, 2vw, 1rem);
   text-align: center;
-  flex: 1; /* Expands to push footer down */
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Ensure content stacks correctly */
 }
 
-/* Hero Section */
-.hero {
-  background: repeating-conic-gradient(#553c9a 0%, #553c9a 10%, #ee4b2b 10%, #ee4b2b 20%, #00c2cb 20%, #00c2cb 30%);
-  color: white;
-  text-align: center;
-  padding: clamp(1rem, 5vw, 2rem) clamp(0.5rem, 2vw, 1rem); /* Responsive padding */
-  clip-path: polygon(10% 10%, 90% 10%, 100% 100%, 0% 100%);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
+/* Section */
+.section {
+  margin: clamp(5px, 1vw, 10px) 0 clamp(1rem, 3vw, 2rem) 0;
+  padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
+  order: -1; /* Moves section to the top */
 }
 
-.hero h1 {
-  font-size: clamp(1.5rem, 5vw, 3rem); /* Scales smoothly */
-  margin-bottom: clamp(0.5rem, 2vw, 1rem);
-  font-family: 'Oswald', sans-serif;
-  animation: fadeIn 1.5s ease-out;
-  transition: transform 0.4s ease;
+.section h2 {
+  font-size: clamp(1rem, 4vw, 1.5rem);
 }
 
-.hero p {
-  font-size: clamp(0.9rem, 3vw, 1.2rem);
-  margin-bottom: clamp(1rem, 3vw, 2.5rem);
-  animation: fadeIn 2s ease-out;
-}
-
-.hero a {
-  text-decoration: none;
-  font-weight: bold;
-  padding: clamp(0.5rem, 2vw, 0.8rem) clamp(1rem, 3vw, 2rem);
-  border-radius: 25px;
-  transition: all 0.3s ease;
-}
-
-/* Section Buttons */
 .section button {
   background: #27ffdd;
   padding: clamp(0.3rem, 1.5vw, 0.5rem);
@@ -100,36 +79,69 @@ header {
   transform: scale(1.25);
 }
 
+/* Hero Section */
+.hero {
+  background: repeating-conic-gradient(#553c9a 0%, #553c9a 10%, #ee4b2b 10%, #ee4b2b 20%, #00c2cb 20%, #00c2cb 30%);
+  color: white;
+  text-align: center;
+  padding: clamp(1rem, 5vw, 2rem) clamp(0.5rem, 2vw, 1rem);
+  clip-path: polygon(10% 10%, 90% 10%, 100% 100%, 0% 100%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.hero h1 {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  font-family: 'Oswald', sans-serif;
+  animation: fadeIn 1.5s ease-out;
+  transition: transform 0.4s ease;
+}
+
+.hero p {
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  margin-bottom: clamp(1rem, 3vw, 2.5rem);
+  animation: fadeIn 2s ease-out;
+}
+
+.hero a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: clamp(0.5rem, 2vw, 0.8rem) clamp(1rem, 3vw, 2rem);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
 /* Clock */
 .clock {
   position: fixed;
   font-family: 'Share Tech Mono', monospace;
-  width: clamp(60px, 10vw, 120px); /* Adjusted min size */
+  width: clamp(60px, 10vw, 120px);
   height: clamp(60px, 10vw, 120px);
   border: 5px solid #34dbf8;
   border-radius: 50%;
   background: black;
-  top: 0; /* Top-right corner */
-  right: 0; /* Top-right corner */
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: #daf6ff;
   text-shadow: 0 0 20px rgb(51, 89, 83), 0 0 20px rgba(10, 175, 230, 0);
-  z-index: 2000; /* Above all elements */
+  z-index: 2000;
 }
 
 .time {
   font-family: 'Orbitron', Arial, sans-serif;
-  font-size: clamp(12px, 2vw, 24px); /* Adjusted min size */
+  font-size: clamp(12px, 2vw, 24px);
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.05em;
 }
 
 .seconds {
-  font-size: 70%; /* Smaller than hours and minutes */
+  font-size: 70%;
 }
 
 /* Blinking colon */
@@ -140,16 +152,6 @@ header {
   animation: blink 1s step-end infinite;
 }
 
-/* Sections */
-.section {
-  margin: clamp(5px, 1vw, 10px) 0 clamp(1rem, 3vw, 2rem) 0; /* Responsive margins */
-  padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
-}
-
-.section h2 {
-  font-size: clamp(1rem, 4vw, 1.5rem);
-}
-
 /* Footer */
 footer {
   background: #333;
@@ -157,7 +159,7 @@ footer {
   text-align: center;
   padding: clamp(0.5rem, 2vw, 1rem);
   width: 100%;
-  margin-top: auto; /* Sticks to bottom */
+  margin-top: auto;
 }
 
 footer p {
@@ -195,7 +197,7 @@ footer p {
 @media (max-width: 768px) {
   .hero {
     padding: clamp(0.75rem, 3vw, 1.25rem) clamp(0.25rem, 1.5vw, 0.5rem);
-    clip-path: polygon(5% 5%, 95% 5%, 100% 100%, 0% 100%); /* Softer clip */
+    clip-path: polygon(5% 5%, 95% 5%, 100% 100%, 0% 100%);
   }
 
   .hero h1 {
@@ -226,6 +228,10 @@ footer p {
   .time {
     font-size: clamp(10px, 2vw, 16px);
   }
+
+  header {
+    padding: clamp(0.2rem, 0.8vw, 0.4rem); /* Further reduced for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
@@ -234,7 +240,7 @@ footer p {
   }
 
   .hero {
-    clip-path: none; /* Remove clip for small screens */
+    clip-path: none;
     padding: clamp(0.5rem, 2vw, 1rem) clamp(0.25rem, 1vw, 0.5rem);
   }
 
@@ -280,11 +286,15 @@ footer p {
   footer p {
     font-size: clamp(0.6rem, 1.8vw, 0.8rem);
   }
+
+  header {
+    padding: clamp(0.15rem, 0.6vw, 0.3rem); /* Even smaller for tiny screens */
+  }
 }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px; /* Standard large screen width */
+    max-width: 1140px;
   }
 
   .hero {
