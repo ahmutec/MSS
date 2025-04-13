@@ -50,7 +50,7 @@ header {
 
 /* Section */
 .section {
-  margin: clamp(5px, 1vw, 10px) 0 clamp(1rem, 3vw, 2rem) 0;
+  margin: clamp(4px, 0.8vw, 9px) 0 clamp(0.8rem, 2.5vw, 1.7rem) 0;
   padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
   order: -1; /* Moves section to the top */
 }
