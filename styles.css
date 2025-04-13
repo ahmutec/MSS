@@ -1,23 +1,301 @@
-  * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+ 
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            overflow-x: hidden;
-            background-image: url('https://images.unsplash.com/photo-1602601022543-c7c30e0b68e5?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3');
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: scroll; /* Mobile-friendly */
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  text-align: center;
+  background-image: url('https://storage.prompt-hunt.workers.dev/632b7202-1aea-4a3d-8933-7940d887196b');
+  background-color: lightgreen;
+  background-size: cover; /* Scales background properly */
+  background-position: center; /* Centers background */
+  background-attachment: fixed;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column; /* Footer sticks to bottom */
+}
 
+p {
+  border: 0;
+  border-radius: 5px;
+  text-wrap: balance; /* Modern text wrapping */
+  font-weight: bold;
+  color: rgb(242, 241, 241);
+}
+
+/* Header */
+header {
+  background: #333;
+  color: white;
+  padding: clamp(0.5rem, 2vw, 1rem); /* Responsive padding */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Above most content */
+  width: 100%;
+}
+
+/* Container */
+.container {
+  max-width: min(90%, 1200px); /* Caps width for large screens */
+  margin: auto;
+  padding: clamp(0.5rem, 2vw, 1rem); /* Responsive padding */
+  text-align: center;
+  flex: 1; /* Expands to push footer down */
+}
+
+/* Hero Section */
+.hero {
+  background: repeating-conic-gradient(#553c9a 0%, #553c9a 10%, #ee4b2b 10%, #ee4b2b 20%, #00c2cb 20%, #00c2cb 30%);
+  color: white;
+  text-align: center;
+  padding: clamp(1rem, 5vw, 2rem) clamp(0.5rem, 2vw, 1rem); /* Responsive padding */
+  clip-path: polygon(10% 10%, 90% 10%, 100% 100%, 0% 100%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.hero h1 {
+  font-size: clamp(1.5rem, 5vw, 3rem); /* Scales smoothly */
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  font-family: 'Oswald', sans-serif;
+  animation: fadeIn 1.5s ease-out;
+  transition: transform 0.4s ease;
+}
+
+.hero p {
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  margin-bottom: clamp(1rem, 3vw, 2.5rem);
+  animation: fadeIn 2s ease-out;
+}
+
+.hero a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: clamp(0.5rem, 2vw, 0.8rem) clamp(1rem, 3vw, 2rem);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+/* Section Buttons */
+.section button {
+  background: #27ffdd;
+  padding: clamp(0.3rem, 1.5vw, 0.5rem);
+  border: none;
+  border-radius: 10px;
+  width: clamp(80px, 15vw, 100px);
+  height: clamp(80px, 15vw, 100px);
+  font-size: clamp(0.5rem, 1.5vw, 1rem);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s ease;
+}
+
+.section button:hover {
+  color: white;
+  background: linear-gradient(120deg, #0fb0f5, #ffe405);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.25);
+}
+
+/* Clock */
+.clock {
+  position: fixed;
+  font-family: 'Share Tech Mono', monospace;
+  width: clamp(60px, 10vw, 120px); /* Adjusted min size */
+  height: clamp(60px, 10vw, 120px);
+  border: 5px solid #34dbf8;
+  border-radius: 50%;
+  background: black;
+  top: 0; /* Top-right corner */
+  right: 0; /* Top-right corner */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #daf6ff;
+  text-shadow: 0 0 20px rgb(51, 89, 83), 0 0 20px rgba(10, 175, 230, 0);
+  z-index: 2000; /* Above all elements */
+}
+
+.time {
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: clamp(12px, 2vw, 24px); /* Adjusted min size */
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.seconds {
+  font-size: 70%; /* Smaller than hours and minutes */
+}
+
+/* Blinking colon */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.colon {
+  animation: blink 1s step-end infinite;
+}
+
+/* Sections */
+.section {
+  margin: clamp(5px, 1vw, 10px) 0 clamp(1rem, 3vw, 2rem) 0; /* Responsive margins */
+  padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
+}
+
+.section h2 {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: clamp(0.5rem, 2vw, 1rem);
+  width: 100%;
+  margin-top: auto; /* Sticks to bottom */
+}
+
+footer p {
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .hero {
+    padding: clamp(1rem, 4vw, 1.5rem) clamp(0.5rem, 2vw, 0.75rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+  }
+
+  .section button {
+    width: clamp(70px, 14vw, 90px);
+    height: clamp(70px, 14vw, 90px);
+    font-size: clamp(0.5rem, 1.4vw, 0.9rem);
+  }
+
+  .clock {
+    width: clamp(70px, 9vw, 100px);
+    height: clamp(70px, 9vw, 100px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: clamp(0.75rem, 3vw, 1.25rem) clamp(0.25rem, 1.5vw, 0.5rem);
+    clip-path: polygon(5% 5%, 95% 5%, 100% 100%, 0% 100%); /* Softer clip */
+  }
+
+  .hero h1 {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .hero p {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+  }
+
+  .section {
+    margin: clamp(5px, 1vw, 8px) 0 clamp(0.75rem, 2vw, 1.5rem) 0;
+  }
+
+  .section button {
+    width: clamp(60px, 12vw, 80px);
+    height: clamp(60px, 12vw, 80px);
+    font-size: clamp(0.5rem, 1.3vw, 0.8rem);
+  }
+
+  .clock {
+    width: clamp(60px, 8vw, 80px);
+    height: clamp(60px, 8vw, 80px);
+    top: clamp(2px, 1vw, 5px);
+    right: clamp(2px, 1vw, 5px);
+  }
+
+  .time {
+    font-size: clamp(10px, 2vw, 16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: clamp(0.25rem, 1vw, 0.5rem);
+  }
+
+  .hero {
+    clip-path: none; /* Remove clip for small screens */
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(0.25rem, 1vw, 0.5rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(1rem, 3.5vw, 1.8rem);
+  }
+
+  .hero p {
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+  }
+
+  .hero a {
+    padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+  }
+
+  .section {
+    margin: 5px 0 clamp(0.5rem, 2vw, 1rem) 0;
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(0.25rem, 1vw, 0.5rem);
+  }
+
+  .section button {
+    width: clamp(50px, 20vw, 70px);
+    height: clamp(50px, 20vw, 70px);
+    font-size: clamp(0.5rem, 2vw, 0.7rem);
+  }
+
+  .section h2 {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+  }
+
+  .clock {
+    width: clamp(50px, 15vw, 60px);
+    height: clamp(50px, 15vw, 60px);
+    top: 2px;
+    right: 2px;
+  }
+
+  .time {
+    font-size: clamp(8px, 2.5vw, 14px);
+  }
+
+  footer p {
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px; /* Standard large screen width */
+  }
+
+  .hero {
+    padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .section {
+    margin: clamp(5px, 0.5vw, 10px) 0 clamp(1.5rem, 2vw, 2.5rem) 0;
+  }
+}
         nav {
             display: flex;
             align-items: center;
@@ -48,32 +326,6 @@
             color: #fff;
             font-weight: bold;
         }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: clamp(0.5rem, 2vw, 1rem); /* Adjusted for fit */
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap; /* Allows buttons to wrap if needed */
-            justify-content: flex-end;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Original size */
-            padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 1rem); /* Restored padding */
-            transition: all 0.25s ease;
-            border-radius: 5px;
-            white-space: nowrap; /* Prevents text wrapping */
-        }
-
-        nav ul li a:hover {
-            color: #fff;
-            background-color: #c00e0e;
-        }
-
         main {
             flex: 1; /* Pushes footer down */
         }
@@ -155,41 +407,6 @@
                 font-size: clamp(1rem, 4vw, 1.5rem);
             }
 
-            nav ul {
-                gap: clamp(0.3rem, 1vw, 0.5rem);
-                flex: 1; /* Shares space with logo */
-                justify-content: flex-end;
-            }
-
-            nav ul li a {
-                font-size: clamp(0.8rem, 2vw, 1rem);
-                padding: clamp(0.2rem, 0.8vw, 0.4rem) clamp(0.3rem, 1vw, 0.6rem);
-            }
-
-            #content {
-                padding: clamp(0.5rem, 2vw, 1rem);
-                max-width: clamp(350px, 90%, 700px);
-                margin: clamp(0.3rem, 1.5vw, 0.5rem) clamp(0.5rem, 2vw, 1rem) 0;
-            }
-
-            #content h1 {
-                font-size: clamp(1.2rem, 4vw, 2rem);
-            }
-
-            #content h2 {
-                font-size: clamp(1rem, 3.5vw, 1.5rem);
-            }
-
-            a:not(nav ul li a) {
-                padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.7rem, 2vw, 1rem);
-                font-size: clamp(0.8rem, 2.5vw, 1rem);
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav {
-                padding: clamp(0.3rem, 1.5vw, 0.5rem) clamp(0.3rem, 1.5vw, 0.75rem);
-            }
 
             .logo img {
                 width: clamp(30px, 7vw, 50px);
@@ -200,47 +417,8 @@
                 font-size: clamp(0.9rem, 3.5vw, 1.2rem);
             }
 
-            nav ul {
-                gap: clamp(0.2rem, 0.8vw, 0.3rem);
-            }
+           
 
-            nav ul li a {
-                font-size: clamp(0.7rem, 1.8vw, 0.9rem);
-                padding: clamp(0.2rem, 0.7vw, 0.3rem) clamp(0.3rem, 0.8vw, 0.5rem);
-            }
-
-            #content {
-                padding: clamp(0.3rem, 1.5vw, 0.75rem);
-                max-width: clamp(300px, 92%, 500px);
-                margin: clamp(0.2rem, 1vw, 0.3rem) clamp(0.3rem, 1vw, 0.5rem) 0;
-            }
-
-            #content h1 {
-                font-size: clamp(1rem, 3.5vw, 1.8rem);
-            }
-
-            #content h2 {
-                font-size: clamp(0.9rem, 3vw, 1.3rem);
-            }
-
-            a:not(nav ul li a) {
-                padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem);
-                font-size: clamp(0.7rem, 2vw, 0.9rem);
-            }
-
-            footer {
-                padding: clamp(0.3rem, 1.5vw, 0.5rem);
-            }
-
-            footer p {
-                font-size: clamp(0.7rem, 1.8vw, 0.9rem);
-            }
-        }
-
-        @media (min-width: 1200px) {
-            nav {
-                padding: clamp(1rem, 1.5vw, 1.5rem) clamp(1.5rem, 2vw, 2rem);
-            }
 
             .logo img {
                 width: clamp(50px, 8vw, 70px);
