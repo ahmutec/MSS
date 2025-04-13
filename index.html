@@ -3,80 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
   <title>WEB DESIGN MARK LIST</title>
-  </head>
+  
+</head>
 <body>
-   <section class="section">
-  <header class="hero" background-image="https://th.bing.com/th/id/OIP.KREbAG9gHMadkVhJnknhcwHaEK?rs=1&pid=ImgDetMain">
-    <div class="container">
-             <nav>
+  <section class="section">
+    <header class="hero">
+      <div class="container">
+        <nav>
+          <!-- Logo is outside nav for fixed positioning -->
+        </nav>
         <div class="logo">
-            <img src="https://th.bing.com/th/id/OIP.d0Zp5QpiGIX2cBjfe1maygAAAA?pid=ImgDet&w=178&h=133&c=7&dpr=1.5" alt="Logo">
-        
+          <img src="https://th.bing.com/th/id/OIP.d0Zp5QpiGIX2cBjfe1maygAAAA?pid=ImgDet&w=178&h=133&c=7&dpr=1.5" alt="Logo">
         </div>
-    </nav>
-    <marqueje behavior="scrolls"  direction="left" ><h1> Welcome to MSS Web Design CCA- Student Portal</h1></marquee>
-      <p>Empowering Education, Inspiring Futures</p>
-       <a href="https://script.google.com/macros/s/AKfycbwgR-15hF9IMkxWFxRP9sKXqYLvkUBhT73yt0Eb10HaKx8parmJoBJgaI2iteCnnhENRw/exec">
-          <button class="btn-primary">ATTENDANCE </button>
+        <marquee behavior="scroll" direction="left">
+          <h1>Welcome to MSS Web Design CCA - Student Portal</h1>
+        </marquee>
+        <p>Empowering Education, Inspiring Futures</p>
+        <a href="https://script.google.com/macros/s/AKfycbwgR-15hF9IMkxWFxRP9sKXqYLvkUBhT73yt0Eb10HaKx8parmJoBJgaI2iteCnnhENRw/exec">
+          <button class="btn-primary">ATTENDANCE</button>
         </a>
         <a href="https://script.google.com/macros/s/AKfycbx760sHRWSpP0MgSa2fTvJDiuCxonUm_Fon7FjJd5uUEHkG_29pjlzRF2-57qdO-i0/exec">
           <button class="btn-primary">MARKLIST</button>
         </a>
-     <!--   <a href="https://ahmutec.github.io/studentmark/"<button class="btn-primary"  ></button></a>
-      <a href="" <button class="btn-primary" ></button></a>
-    <a href="#G-12" class="btn-secondary"  style="background-color: rgb(0, 60, 255); color: rgb(255, 255, 254);">G-12</a> -->
-     
-
-    </div>
-   </section>
-  </header>
- <!-- <section id="G-9" class="section" >
-    <div class="container">
-      <label class="lbl"><h3><i><a href="https" STYLE="color:white;">CLICK HERE!</a></i></h3></label>
-          
-  </div> 
+      </div>
+    </header>
   </section>
--->
-  <div class="clock">
-  <div class="time">12:00<span class="colon">:</span><span class="seconds">00</span></div>
-</div>
   <footer>
     <div class="container">
-      <p>&copy; 2025 ACCA | Designed for Excellence</p>
-
-     <p style="font-family: 'Courier New', Courier, monospace;">Phone No.: +251 912 66 87 87</p>  
+      <p>© 2025 ACCA | Designed for Excellence</p>
+      <p style="font-family: 'Courier New', Courier, monospace;">Phone No.: +251 912 66 87 87</p>
     </div>
   </footer>
-
   <div class="clock">
     <div class="time" id="time"></div>
   </div>
-
   <script>
-    // Update clock every second
     function updateClock() {
       const now = new Date();
       let hours = now.getHours();
       let minutes = now.getMinutes();
       let seconds = now.getSeconds();
-      const period = hours >= 12 ? "PM" : "AM"; // Determine AM/PM
-
-      // Convert to 12-hour format
-      hours = hours % 12 || 12; // 0 becomes 12, 13 becomes 1, etc.
+      const period = hours >= 12 ? "PM" : "AM";
+      hours = hours % 12 || 12;
       hours = hours < 10 ? "0" + hours : hours;
       minutes = minutes < 10 ? "0" + minutes : minutes;
       seconds = seconds < 10 ? "0" + seconds : seconds;
-
-      // Format time with AM/PM
       const timeString = `${hours}<span class="colon">:</span>${minutes}<span class="colon">:</span>${seconds} ${period}`;
-      
-      // Update display
       document.getElementById("time").innerHTML = timeString;
     }
-
-    // Initial call and update every second
     updateClock();
     setInterval(updateClock, 1000);
   </script>
