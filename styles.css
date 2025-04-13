@@ -157,12 +157,12 @@ header {
 
 /* Footer */
 footer {
-  background: #333;
+  background: #00008B; /* Changed to dark blue */
   color: white;
   text-align: center;
   padding: clamp(0.5rem, 2vw, 1rem);
   width: 100%;
-  margin: clamp(0.5px, 0.1vw, 1px) 0;
+  margin: clamp(0.5px, 0.1vw, 1px) 0 0 0; /* Margin-bottom set to 0 */
   height: fit-content;
 }
 
@@ -233,7 +233,7 @@ footer p {
     font-size: clamp(10px, 2vw, 16px);
   }
 
-  header {
+  .header {
     padding: clamp(0.2rem, 0.8vw, 0.4rem);
   }
 }
