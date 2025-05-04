@@ -7,68 +7,65 @@
 
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-  text-align: center;
-  background-image: url('https://storage.prompt-hunt.workers.dev/632b7202-1aea-4a3d-8933-7940d887196b');
-  background-color: lightgreen;
+  background-image: url('https://th.bing.com/th/id/R.84ae60fcae6fd9f16c36e745676e6752?rik=0bBhy8CL%2bmxtZw&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fGTrby6G.jpg&ehk=eqVeTLl4%2b%2f38QuCaxbE3LyI3M65fD7T5gtaz%2b4baVt8%3d&risl=&pid=ImgRaw&r=0');
+  background-color: deepskyblue;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  text-align: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s ease;
 }
 
 p {
-  border: 0;
-  border-radius: 5px;
-  text-wrap: balance;
   font-weight: bold;
   color: rgb(242, 241, 241);
 }
 
-/* Header */
-header {
-  background: #333;
+/* Hero Section (Header) */
+.hero {
+  background: repeating-conic-gradient(#553c9a 0%, #553c9a 10%, #ee4b2b 10%, #ee4b2b 20%, #00c2cb 20%, #00c2cb 30%);
   color: white;
-  padding: clamp(0.25rem, 1vw, 0.5rem);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  height: fit-content;
-}
-
-/* Container */
-.container {
-  max-width: min(90%, 1200px);
-  margin: auto;
-  padding: clamp(0.5rem, 2vw, 1rem);
   text-align: center;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  padding: clamp(1rem, 2vw, 1.5rem) 0; /* Reduced padding */
+  clip-path: polygon(6% 10%, 90% 6%, 100% 100%, 0% 100%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
 }
 
-/* Section */
+.hero h1 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin: clamp(0.25rem, 1vw, 0.5rem) 0; /* Reduced margin */
+}
+
+.hero p {
+  font-size: clamp(0.875rem, 3vw, 1rem);
+  margin: 0; /* Removed bottom margin */
+}
+
+/* Section with Buttons */
 .section {
-  margin: clamp(0.5px, 0.1vw, 1px) 0 clamp(0.5px, 0.1vw, 1px) 0;
-  padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
-  order: -1;
-  height: fit-content;
+  padding: clamp(0.5rem, 1vw, 1rem) 0; /* Reduced padding */
 }
 
-.section h2 {
-  font-size: clamp(1rem, 4vw, 1.5rem);
+.section .container {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 1rem); /* Reduced gap */
+  flex-wrap: wrap;
+  padding: clamp(0.25rem, 1vw, 0.5rem); /* Reduced padding */
 }
 
 .section button {
   background: #27ffdd;
-  padding: clamp(0.3rem, 1.5vw, 0.5rem);
+
+  padding: clamp(0.3rem, 1.5vw, 0.5rem); /* Responsive padding */
   border: none;
   border-radius: 10px;
-  width: clamp(80px, 15vw, 100px);
-  height: clamp(80px, 15vw, 100px);
-  font-size: clamp(0.5rem, 1.5vw, 1rem);
+  width: clamp(80px, 13vw, 120px); /* Slightly smaller buttons */
+  height: clamp(70px, 13vw, 120px);
+  font-size: clamp(0.5rem, 1.2vw, 0.875rem);
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s, transform 0.3s, box-shadow 0.3s ease;
@@ -81,51 +78,34 @@ header {
   transform: scale(1.25);
 }
 
-/* Hero Section */
-.hero {
-  background: repeating-conic-gradient(#553c9a 0%, #553c9a 10%, #ee4b2b 10%, #ee4b2b 20%, #00c2cb 20%, #00c2cb 30%);
-  color: white;
-  text-align: center;
-  padding: clamp(1rem, 5vw, 2rem) clamp(0.5rem, 2vw, 1rem);
-  clip-path: polygon(10% 10%, 90% 10%, 100% 100%, 0% 100%);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
-  height: fit-content;
+.section .info-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  border: 2px solid red;
+  border-radius: 20px;
+  padding: clamp(0.25rem, 1vw, 0.5rem);
+  margin: clamp(0.5rem, 2vw, 1rem) auto;
+  max-width: 90%;
+  background-color: darkblue;
 }
 
-.hero h1 {
-  font-size: clamp(1.5rem, 5vw, 3rem);
-  margin-bottom: clamp(0.5rem, 2vw, 1rem);
-  font-family: 'Oswald', sans-serif;
-  animation: fadeIn 1.5s ease-out;
-  transition: transform 0.4s ease;
-}
-
-.hero p {
-  font-size: clamp(0.9rem, 3vw, 1.2rem);
-  margin-bottom: clamp(1rem, 3vw, 2.5rem);
-  animation: fadeIn 2s ease-out;
-}
-
-.hero a {
-  text-decoration: none;
-  font-weight: bold;
-  padding: clamp(0.5rem, 2vw, 0.8rem) clamp(1rem, 3vw, 2rem);
-  border-radius: 25px;
-  transition: all 0.3s ease;
+/* Main Content */
+main {
+  flex: 1; /* Pushes footer to bottom */
+  padding: clamp(0.5rem, 2vw, 1rem);
 }
 
 /* Clock */
 .clock {
   position: fixed;
   font-family: 'Share Tech Mono', monospace;
-  width: clamp(60px, 10vw, 120px);
-  height: clamp(60px, 10vw, 120px);
+  width: clamp(60px, 10vw, 100px);
+  height: clamp(60px, 10vw, 100px);
   border: 5px solid #34dbf8;
   border-radius: 50%;
   background: black;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,14 +117,110 @@ header {
 
 .time {
   font-family: 'Orbitron', Arial, sans-serif;
-  font-size: clamp(12px, 2vw, 24px);
+  font-size: clamp(10px, 2vw, 20px);
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.05em;
 }
 
-.seconds {
-  font-size: 70%;
+/* Footer */
+footer {
+  background: #1f7d40;
+  color: white;
+  text-align: center;
+  padding: clamp(0.25rem, 1vw, 0.5rem); /* Reduced padding */
+  margin-top: auto; /* Sticks footer to bottom */
+}
+
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
+}
+
+footer p {
+  font-size: clamp(0.625rem, 2vw, 0.75rem);
+  margin: 0;
+}
+
+/* Responsive Design */
+
+/* Small screens (mobile, up to 600px) */
+@media (max-width: 600px) {
+  .hero {
+    padding: clamp(0.5rem, 3vw, 1rem) 0.5rem;
+  }
+
+  .section {
+    padding: clamp(0.25rem, 2vw, 0.5rem) 0;
+  }
+
+  .section button {
+    width: clamp(50px, 19vw, 80px);
+    height: clamp(50px, 18vw, 70px);
+    font-size: clamp(0.5rem, 3vw, 0.75rem);
+    padding: 0.2rem;
+  }
+
+  .section .container {
+    gap: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  .section .info-text {
+    font-size: clamp(0.625rem, 3vw, 0.75rem);
+    padding: 0.25rem;
+    margin: 0.5rem auto;
+  }
+
+  .clock {
+    width: clamp(50px, 12vw, 70px);
+    height: clamp(50px, 12vw, 70px);
+    top: 2px;
+    right: 2px;
+  }
+
+  .time {
+    font-size: clamp(8px, 2.5vw, 12px);
+  }
+}
+
+/* Medium screens (tablets, 601px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hero {
+    padding: clamp(0.75rem, 4vw, 1.25rem) 1rem;
+  }
+
+  .section button {
+    width: clamp(80px, 10vw, 90px);
+    height: clamp(80px, 10vw, 90px);
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .section .container {
+    gap: 0.75rem;
+  }
+
+  .section .info-text {
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  }
+}
+
+/* Large screens (desktops, above 1024px) */
+@media (min-width: 1025px) {
+  .hero {
+    padding: clamp(1rem, 3vw, 1.5rem) 1rem;
+  }
+
+  .section button {
+    width: 90px;
+    height: 90px;
+    font-size: 0.875rem;
+  }
+
+  .section .container {
+    gap: 1rem;
+  }
 }
 
 /* Blinking colon */
@@ -153,159 +229,4 @@ header {
 }
 .colon {
   animation: blink 1s step-end infinite;
-}
-
-/* Footer */
-footer {
-  background: #00008B; /* Changed to dark blue */
-  color: white;
-  text-align: center;
-  padding: clamp(0.5rem, 2vw, 1rem);
-  width: 100%;
-  margin: clamp(0.5px, 0.1vw, 1px) 0 0 0; /* Margin-bottom set to 0 */
-  height: fit-content;
-}
-
-footer p {
-  font-size: clamp(0.7rem, 2vw, 0.9rem);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 1024px) {
-  .hero {
-    padding: clamp(1rem, 4vw, 1.5rem) clamp(0.5rem, 2vw, 0.75rem);
-  }
-
-  .hero h1 {
-    font-size: clamp(1.5rem, 4.5vw, 2.5rem);
-  }
-
-  .section button {
-    width: clamp(70px, 14vw, 90px);
-    height: clamp(70px, 14vw, 90px);
-    font-size: clamp(0.5rem, 1.4vw, 0.9rem);
-  }
-
-  .clock {
-    width: clamp(70px, 9vw, 100px);
-    height: clamp(70px, 9vw, 100px);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding: clamp(0.75rem, 3vw, 1.25rem) clamp(0.25rem, 1.5vw, 0.5rem);
-    clip-path: polygon(5% 5%, 95% 5%, 100% 100%, 0% 100%);
-  }
-
-  .hero h1 {
-    font-size: clamp(1.25rem, 4vw, 2rem);
-  }
-
-  .hero p {
-    font-size: clamp(0.8rem, 2.5vw, 1rem);
-  }
-
-  .section {
-    margin: clamp(0.5px, 0.1vw, 1px) 0;
-  }
-
-  .section button {
-    width: clamp(60px, 12vw, 80px);
-    height: clamp(60px, 12vw, 80px);
-    font-size: clamp(0.5rem, 1.3vw, 0.8rem);
-  }
-
-  .clock {
-    width: clamp(60px, 8vw, 80px);
-    height: clamp(60px, 8vw, 80px);
-    top: clamp(2px, 1vw, 5px);
-    right: clamp(2px, 1vw, 5px);
-  }
-
-  .time {
-    font-size: clamp(10px, 2vw, 16px);
-  }
-
-  .header {
-    padding: clamp(0.2rem, 0.8vw, 0.4rem);
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: clamp(0.25rem, 1vw, 0.5rem);
-  }
-
-  .hero {
-    clip-path: none;
-    padding: clamp(0.5rem, 2vw, 1rem) clamp(0.25rem, 1vw, 0.5rem);
-  }
-
-  .hero h1 {
-    font-size: clamp(1rem, 3.5vw, 1.8rem);
-  }
-
-  .hero p {
-    font-size: clamp(0.7rem, 2vw, 0.9rem);
-  }
-
-  .hero a {
-    padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.8rem, 2vw, 1.2rem);
-    font-size: clamp(0.7rem, 2vw, 0.9rem);
-  }
-
-  .section {
-    margin: clamp(0.5px, 0.1vw, 1px) 0;
-    padding: clamp(0.5rem, 2vw, 1rem) clamp(0.25rem, 1vw, 0.5rem);
-  }
-
-  .section button {
-    width: clamp(50px, 20vw, 70px);
-    height: clamp(50px, 20vw, 70px);
-    font-size: clamp(0.5rem, 2vw, 0.7rem);
-  }
-
-  .section h2 {
-    font-size: clamp(0.9rem, 3vw, 1.2rem);
-  }
-
-  .clock {
-    width: clamp(50px, 15vw, 60px);
-    height: clamp(50px, 15vw, 60px);
-    top: 2px;
-    right: 2px;
-  }
-
-  .time {
-    font-size: clamp(8px, 2.5vw, 14px);
-  }
-
-  footer p {
-    font-size: clamp(0.6rem, 1.8vw, 0.8rem);
-  }
-
-  header {
-    padding: clamp(0.15rem, 0.6vw, 0.3rem);
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-
-  .hero {
-    padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 1.5rem);
-  }
-
-  .section {
-    margin: clamp(0.5px, 0.1vw, 1px) 0;
-  }
 }
